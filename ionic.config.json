@@ -1,0 +1,10 @@
+{
+  "name": "listToDo",
+  "app_id": "",
+  "type": "ionic-angular",
+  "proxies":[{
+    "path":"/tareasApi",
+    "proxyUrl":"http://localhost/MyApiToDoList/tareas/"
+  }]
+
+}

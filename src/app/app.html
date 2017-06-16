@@ -1,0 +1,16 @@
+<ion-nav [root]="rootPage" #nav></ion-nav>
+
+<ion-menu [content]="nav" color="secondary" type="overlay">
+	<ion-content>
+	<img src='/assets/images/logo.jpg' alt='logo de la apps'/>
+		<ion-list>
+			<div *ngFor="let page of pages">
+				<button color="dark" ion-item icon-left *ngIf="page.visible" (click)="goToPage(page.component)" menuClose >
+					<ion-icon name="{{page.icono}}" ></ion-icon> 
+					{{page.titulo}}
+				</button>
+			</div> 
+			
+		</ion-list>
+	</ion-content>
+</ion-menu>

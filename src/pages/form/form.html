@@ -1,0 +1,41 @@
+<!--
+  Generated template for the FormPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="dark">
+        <button color="dark"  ion-button menuToggle>
+          <ion-icon color='light' name='menu'></ion-icon>
+        </button>
+        <ion-title>ToDo List</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <h1 class="titulo">Agregando Tarea</h1>
+    <form (ngSubmit)='submit()'>
+      <ion-list>
+        <ion-item>
+          <ion-label floating>Nombre de la Tarea</ion-label>
+          <ion-input type="text" name='titulo' [(ngModel)]="tarea.titulo" maxlength="50" clearInput='true' required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Descripción</ion-label>
+          <ion-textarea name=descripcion [(ngModel)]="tarea.descripcion" maxlength="255" required></ion-textarea>
+        </ion-item>
+        <ion-item>
+          <ion-label >Urgente</ion-label>
+          <ion-checkbox name="urgente" required [(ngModel)]="tarea.urgente" value="1"></ion-checkbox>
+        </ion-item>
+      </ion-list>
+      <button ion-button color="secondary" block full icon-right type="submit">
+        Guardar<ion-icon name='send'></ion-icon>
+        </button>
+      <button ion-button color="danger" (click)='cancelar()' block full icon-right type="button">
+        Cancelar<ion-icon name='close'></ion-icon>
+        </button>
+    </form>
+</ion-content>

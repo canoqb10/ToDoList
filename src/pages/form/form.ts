@@ -33,7 +33,6 @@ export class FormPage {
   submit(){
     if(!this.bEdit){
       this.TareasProvider.create(this.tarea).subscribe(res=>{
-            console.log(res);
             let response=res;
             let mensaje=this.alert.create({
                 title: 'Exito',
@@ -62,9 +61,10 @@ export class FormPage {
     this.navCtrl.pop(FormPage);
   }
   ionViewDidLoad() {
-    if(this.idTarea!==0){
+    if(typeof this.idTarea !== 'undefined'){
       this.TareasProvider.getTareaById(this.idTarea).subscribe(tarea=>{
        this.tarea=tarea;
+       this.tarea.urgente=(this.tarea===1)?true:false;
        this.bEdit=true;
       });
     }

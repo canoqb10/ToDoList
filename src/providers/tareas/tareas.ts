@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Http, RequestOptions,Headers } from '@angular/http';
-import { AlertController } from 'ionic-angular';
+//import { Http, RequestOptions,Headers } from '@angular/http';
+import { Http } from '@angular/http';
+
 
 
 import 'rxjs/add/operator/map';
@@ -15,7 +16,7 @@ import 'rxjs/add/operator/map';
 export class TareasProvider {
 
   private urlApI='/tareasApi/';
-  private alert:any; 
+//  private alert:any; 
   constructor(public http: Http) {
     console.log('Hello TareasProvider Provider');
    

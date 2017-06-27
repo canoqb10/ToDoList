@@ -8,7 +8,7 @@ import {FormPage } from '../pages/form/form';
 
 @Component({
   templateUrl: 'app.html'
-})
+}) 
 export class MyApp {
 
   @ViewChild('nav')nav:Nav;
@@ -26,7 +26,8 @@ export class MyApp {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
-      splashScreen.hide();
+      //splashScreen.hide();
+      splashScreen.show();
     });
   }
   goToPage(page){

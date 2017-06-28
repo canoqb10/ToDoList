@@ -5,22 +5,28 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-navbar color="dark">
-        <button color="dark"  ion-button menuToggle>
-          <ion-icon color='light' name='menu'></ion-icon>
-        </button>
-        
-        <ion-title>ToDo List</ion-title>
+  <ion-navbar color="dark"  hideBackButton="true">
+    <ion-buttons left>
+    <button color="dark"  ion-button menuToggle>
+        <ion-icon color='light' name='menu'></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title style="text-align:center;">ToDo List</ion-title>
+    <ion-buttons end>
+      <button color="dark" ion-button >
+              <ion-icon color='light' name='alarm'></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
 <h1 class="titulo">Lista de pendientes</h1>
-<ion-fab top right edge>
-  <button  ion-fab color="secondary" (click)="addTarea()">
+
+  <button  ion-fab top right edge color="secondary" (click)="addTarea()">
       <ion-icon name='add'></ion-icon>
   </button>
-</ion-fab>
+
 <ion-list>
   <ion-item-sliding *ngFor="let tarea of tareas">
     <ion-item>
@@ -41,3 +47,17 @@
 </ion-list>
 
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs class="tabs-icon-text" [color]="isAndroid ? 'royal' : 'primary'">
+      <ion-tab tabIcon="card" tabTitle="Poliza" [root]="rootPage"></ion-tab>
+      <ion-tab tabIcon="search" tabTitle="Buscar" [root]="rootPage"></ion-tab>
+      <ion-tab tabIcon="time" tabTitle="Citas" [root]="rootPage"></ion-tab>
+      <ion-tab tabIcon="heart" tabTitle="Favoritos" [root]="rootPage"></ion-tab>
+      <ion-tab tabIcon="chatboxes" tabTitle="Contacto" [root]="rootPage"></ion-tab>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>
+
+https://www.youtube.com/watch?v=7ddBOfTakHM
+https://www.youtube.com/watch?v=QbvgZGUl4hQ

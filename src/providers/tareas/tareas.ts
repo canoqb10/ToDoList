@@ -45,26 +45,18 @@ export class TareasProvider {
     //let headers = new Headers({ 'Content-Type': undefined });
     //let options = new RequestOptions({ headers: headers });
     return this.http.post(this.urlApI+'create',formData).map(res=>res.json());
-
-     /*this.http.post(this.urlApI+'create',formData).subscribe(res=>{
-       let response=res.json();
-      
-       let mensaje=this.alert.create({
-          title: 'Exito',
-          message: response.message,
-          buttons:['Aceptar']
-        });
-        mensaje.present();
-        
-     });*/
   }
   update(data){
     let formData= new FormData();
 
+    console.log(data.urgente);
+    let urgAux:any=(data.urgente)?1:-1;
     formData.append('id',data.id);
     formData.append('titulo',data.titulo);
     formData.append('descripcion',data.descripcion);
-    formData.append('urgente',data.urgente);
+    formData.append('urgente',urgAux);
+    console.log(data);
+    console.log(formData);
     
     return this.http.post(this.urlApI+'update',formData).map(res=>res.json());
   }

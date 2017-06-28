@@ -63,8 +63,10 @@ export class FormPage {
   ionViewDidLoad() {
     if(typeof this.idTarea !== 'undefined'){
       this.TareasProvider.getTareaById(this.idTarea).subscribe(tarea=>{
-       this.tarea=tarea;
-       this.tarea.urgente=(this.tarea===1)?true:false;
+       this.tarea.id=tarea.id;
+       this.tarea.titulo=tarea.titulo;
+       this.tarea.descripcion=tarea.descripcion;
+       this.tarea.urgente=(tarea.urgente==1)?true:false;
        this.bEdit=true;
       });
     }
